@@ -1,7 +1,6 @@
 
-let scoreRank = rankedMatches(5, 10)
+let scoreRank = rankedMatches(105, 2)
 let nivel;
-console.log(scoreRank);
 
 switch (true) {
     case (scoreRank <= 10):
@@ -16,13 +15,20 @@ switch (true) {
     case (scoreRank > 51 && scoreRank <= 80):
         nivel = "Ouro"
         break
-    case (scoreRank > 10 && scoreRank <= 20):
-        nivel = "bronze"
+    case (scoreRank > 81 && scoreRank <= 90):
+        nivel = "Diamante"
         break
-
+    case (scoreRank > 91 && scoreRank <= 100):
+        nivel = "Lendario"
+        break
+    case (scoreRank >= 101):
+        nivel = "Imortal"
+        break
 }
 
-function rankedMatches(win, loser,) {
-    let mmr = win - loser
+console.log("o saldo de vitorias do heroi e ", + scoreRank, "esta no nivel de " + nivel);
+
+function rankedMatches(win, loser, mmr = 0) {
+    mmr = win - loser
     return mmr;
 }
